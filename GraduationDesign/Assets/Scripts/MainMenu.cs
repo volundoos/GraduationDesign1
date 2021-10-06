@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
+    public GameObject mainMenuUI;
+    public GameObject optionMenuUI;
+
     void Start()
     {
-        
+        mainMenuUI.SetActive(true);
+        optionMenuUI.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void LoadGame()
     {
@@ -26,5 +25,11 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("quit!");
         Application.Quit();
+    }
+
+    public void LoadOption()
+    {
+        mainMenuUI.SetActive(false);
+        optionMenuUI.SetActive(true);
     }
 }
